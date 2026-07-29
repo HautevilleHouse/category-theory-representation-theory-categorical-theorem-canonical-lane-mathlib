@@ -1,0 +1,16 @@
+import HautevilleHouse.CategoryTheoryRepresentationTheoryCategoricalTheoremCanonicalLaneLean.AdmissibleClass
+import HautevilleHouse.CategoryTheoryRepresentationTheoryCategoricalTheoremCanonicalLaneLean.BridgeLemmas
+import HautevilleHouse.CategoryTheoryRepresentationTheoryCategoricalTheoremCanonicalLaneLean.GateLemmas
+
+namespace HautevilleHouse
+namespace CategoryTheoryRepresentationTheoryCategoricalTheoremCanonicalLaneLean
+
+def ConstrainedCategoryTheoremClosure (A : AdmissibleClass) : Prop :=
+  bridgeClosed A ∧ gateClosed A
+
+theorem constrained_category_theorem_endgame (A : AdmissibleClass) :
+    ConstrainedCategoryTheoremClosure A := by
+  exact And.intro (bridge_from_admissible_class A) (gate_from_admissible_class A)
+
+end CategoryTheoryRepresentationTheoryCategoricalTheoremCanonicalLaneLean
+end HautevilleHouse
